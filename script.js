@@ -35,6 +35,18 @@ async function CheckWeather(cityname) {
     let data = await response.json();
     console.log(data);
 
+    // // Working HERE
+    // console.log(
+    //   `Sunrise: ${new Date(data.sys.sunrise).getHours()}:${new Date(
+    //     data.sys.sunrise
+    //   ).getMinutes()}`
+    // );
+    // console.log(
+    //   `Sunset: ${new Date(data.sys.sunset).getHours()}:${new Date(
+    //     data.sys.sunrise
+    //   ).getMinutes()}`
+    // );
+
     const { temp, humidity, feels_like } = data.main;
     const { speed } = data.wind;
 
@@ -50,6 +62,9 @@ async function CheckWeather(cityname) {
     document.querySelector(".feelslike").textContent = `Feels Like ${Math.round(
       feels_like
     )}°c`;
+    document.querySelector(".weatherDescription").textContent =
+      data.weather[0].description[0].toUpperCase() +
+      data.weather[0].description.slice(1);
   }
 }
 

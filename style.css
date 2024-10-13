@@ -146,3 +146,8 @@ body {
 .modeBtn:active {
   transform: scale(0.95); /* Shrink slightly when clicked */
 }
+
+.weatherDescription {
+  font-size: 25px;
+  padding-top: 10px;
+}
